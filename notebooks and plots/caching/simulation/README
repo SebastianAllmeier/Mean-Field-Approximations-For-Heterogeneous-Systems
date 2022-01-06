@@ -1,0 +1,37 @@
+Copyright Nicolas Gast 2014-2015, Nicolas.Gast@inria.fr 
+
+
+### About ###
+
+This program simulates the cache replacement policies and the
+corresponding ODE approximation for the RAND(m) and FIFO(m) described
+in the following paper: 
+
+Nicolas Gast, Benny Van Houdt. Transient and Steady-state Regime of a
+Family of List-based Cache Replacement Algorithms. ACM SIGMETRICS
+2015, Jun 2015, Portland, United States.
+
+
+### Compilation ###
+
+Typing "make" should work
+
+### Usage example ###
+
+To simulate FIFO(m), RAND(m) and the ode approximation for 1000 items
+that have a popularity distribtued according to a zipf distribution of
+parameter 0.9 and a cache with 3 lists of sizes 10,20 and 30:
+
+./simu N1000 a0.9 M10 20 30 F        > FIFO_10_20_30.txt
+./simu N1000 a0.9 M10 20 30 R        > RANDOM_10_20_30.txt
+./ode_solver N1000 a0.9 M10 20 30 R  > ode_10_20_30.txt
+
+
+To plot the total popularities as a function of time:
+
+echo 'plot "FIFO_10_20_30.txt" u 5,"RANDOM_10_20_30.txt" u 5,"ode_10_20_30.txt" u 5' | gnuplot
+
+
+To plot the popularity in the middle box as a function of time:
+
+echo 'plot "FIFO_10_20_30.txt" u 3,"RANDOM_10_20_30.txt" u 3,"ode_10_20_30.txt" u 3' | gnuplot

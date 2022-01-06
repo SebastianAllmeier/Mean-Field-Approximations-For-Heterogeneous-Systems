@@ -1,0 +1,20 @@
+*.pyc
+*-checkpoint.ipynb 
+
+draft.pdf
+*.out
+*.dSYM
+*~
+*.bbl
+*.aux
+*.log
+*-blx.bib
+*.blg
+*.synctex.gz
+*.run.xml
+*.cut
+*.toc
+!latex/plots/*.pdf
+!notebooks and plots/plots/*.pdf
+
+.idea
