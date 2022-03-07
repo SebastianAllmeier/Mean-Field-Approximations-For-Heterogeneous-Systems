@@ -18,3 +18,4 @@ draft.pdf
 !notebooks and plots/plots/*.pdf
 
 .idea
+/paper/plots/performance_ODE.ipynb
